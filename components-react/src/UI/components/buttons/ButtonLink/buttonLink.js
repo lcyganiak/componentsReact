@@ -1,13 +1,15 @@
-// import './buttonLink.scss';
-// import React, { useState } from 'react';
+import './buttonLink.scss';
+import React, { useState } from 'react';
 
-// function ButtonLink(props) {
-//     const [btnValue] = useState(props.value || 'brak opisu');
-//     // const [btnLink] = 
+function ButtonLink(props) {
+    const [btnValue, setbtnValue] = useState(props.value || 'brak opisu');
+    const [btnLink, setbtnLink] = useState(props.link || '')
 
-//         return(
-//             <button>
-//                 <a href="">{btnValue}</a>
-//             </button>
-//         )
-// }
+        return(
+            <button className='btn-link'>
+                <a href={btnLink} target="_blank" rel="noreferrer">{btnValue}</a>
+            </button>
+        )
+}
+
+export default ButtonLink;
