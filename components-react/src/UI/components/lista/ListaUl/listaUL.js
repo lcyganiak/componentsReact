@@ -5,7 +5,7 @@ function ListaUl(props) {
     const [elemty, setelementy] = useState(props.items|| ['Brak el. do wyświetlania'])
 
 const elemntyLi = () => {
-    return elemty.map(item => <li>{item}</li>)
+    return elemty.map((item, index) => <li key={index}>{item}</li>)
 }
 
     return(
