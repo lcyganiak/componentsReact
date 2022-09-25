@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React, {useState} from 'react'
 
 import './App.scss';
 // import ButtonPraimary from './UI/components/buttons/ButtonPrimary/buttonPraimary';
@@ -10,10 +11,10 @@ import './App.scss';
 // import InputText from './UI/components/inputsGrup/inputText/inputText';
 // import ListaUl from './UI/components/lista/ListaUl/listaUL'
 // import Select from './UI/components/select/Select';
-import InputRadio from './UI/components/inputsGrup/inputRadio/InputRadio';
-import InputRadioOrCheckbox from './UI/components/inputsGrup/InputRadioOrCheckbox/InputRadioOrCheckbox';
-import Tabel from './UI/components/table/Tabel'
-
+// import InputRadio from './UI/components/inputsGrup/inputRadio/InputRadio';
+// import InputRadioOrCheckbox from './UI/components/inputsGrup/InputRadioOrCheckbox/InputRadioOrCheckbox';
+// import Tabel from './UI/components/table/Tabel'
+import Textarea from './UI/components/textArea/Textarea';
 function App() {
 //   const arr = [1,5,3,6,7, 4, 2]
 //   const auta = ["Adudi", "Opel", "Fiat"]
@@ -102,7 +103,18 @@ const tData = [
     telefon: "856859658"
 }
 ]
+const jakistekst = 'lasdmkaskddlas l dksdkas'
+const [textArea, setTextArea] = useState("Witamy w Bazie Wiedzy. W tym miejscu zamieszczone są wszystkie przydatne informacje dotyczące zajęć oraz niezbędne materiały, z których będziesz korzystać podczas całego kursu.");
+// const textsAreaArr = ['', "Witamy w Bazie Wiedzy.", "W tym miejscu zamieszczone są wszystkie przydatne informacje dotyczące zajęć oraz niezbędne materiały, z których będziesz korzystać podczas całego kursu."]
 
+
+// const generetTextArea = () => {
+//   return textsAreaArr.map(item => <Textarea textArea={item}></Textarea> )
+// }
+
+const upDateTextArea = (newVal) => {
+  setTextArea(newVal)
+}
   return (
     <div className="App">
       <header className="App-header">
@@ -138,12 +150,20 @@ const tData = [
 
 
       <Select labelText="Lista Kursów SDA" options={sdaOptions}></Select> */}
-      <InputRadio legendText={legendText} nameRadioInput={nameRadioInput} listRadio={listRadio}></InputRadio>
+      {/* <InputRadio legendText={legendText} nameRadioInput={nameRadioInput} listRadio={listRadio}></InputRadio>
       <InputRadioOrCheckbox legendText={legendText}  listRadio={listRadio}></InputRadioOrCheckbox>
       <InputRadioOrCheckbox legendText={legendText}  listRadio={listRadio} checkBoxOrRadio="radio"></InputRadioOrCheckbox>
 
-      <Tabel tHead={tHead} tData={tData}></Tabel>
+      <Tabel tHead={tHead} tData={tData}></Tabel> */}
+      <div className='rodzicCalosc'>
+      <p>
+        <h5>Jestem testem z zmiennej textArea, który wyświetal sie w rodzicu App.js</h5>
+        {textArea}
+      </p>
 
+      <Textarea textArea={textArea} upDateTextArea={upDateTextArea}></Textarea>
+
+      </div>
     </div>
   );
 }
