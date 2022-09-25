@@ -15,6 +15,8 @@ import './App.scss';
 // import InputRadioOrCheckbox from './UI/components/inputsGrup/InputRadioOrCheckbox/InputRadioOrCheckbox';
 // import Tabel from './UI/components/table/Tabel'
 import Textarea from './UI/components/textArea/Textarea';
+import WidokRodzic from './UI/view/Rodzic/WidokRodzic';
+import WidokRodzicSAmochody from './UI/view/Rodzic/WidokRodzicSAmochody'
 function App() {
 //   const arr = [1,5,3,6,7, 4, 2]
 //   const auta = ["Adudi", "Opel", "Fiat"]
@@ -164,6 +166,10 @@ const upDateTextArea = (newVal) => {
       <Textarea textArea={textArea} upDateTextArea={upDateTextArea}></Textarea>
 
       </div>
+
+      <WidokRodzic></WidokRodzic>
+
+      <WidokRodzicSAmochody></WidokRodzicSAmochody>
     </div>
   );
 }
